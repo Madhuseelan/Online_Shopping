@@ -1,0 +1,194 @@
+.hero-section {
+    width: 92%;
+    min-height: 560px;
+
+    margin: 35px auto;
+
+    border-radius: 28px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* Dark overlay only on left side */
+
+.hero-section::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.72) 0%,
+        rgba(0, 0, 0, 0.45) 35%,
+        rgba(0, 0, 0, 0.05) 70%,
+        transparent 100%
+    );
+
+    z-index: 1;
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 600px;
+
+    padding: 50px;
+
+    color: white;
+}
+
+
+.hero-badge {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    margin-bottom: 20px;
+
+    border-radius: 30px;
+
+    background: rgba(139, 92, 246, 0.8);
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.hero-content h1 {
+    font-size: 58px;
+
+    line-height: 1.05;
+
+    font-weight: 800;
+
+    margin-bottom: 22px;
+}
+
+
+.hero-content h1 span {
+    color: #a875ff;
+}
+
+
+.hero-content p {
+    max-width: 500px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+    color: #f1f1f1;
+}
+
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+}
+
+
+.shop-btn {
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #8b5cf6;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.shop-btn:hover {
+    background: #7444e8;
+
+    transform: translateY(-2px);
+}
+
+
+.explore-btn {
+    padding: 12px 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.explore-btn:hover {
+    background: white;
+
+    color: #333;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        width: 94%;
+
+        min-height: 520px;
+    }
+
+    .hero-content {
+        padding: 30px;
+    }
+
+    .hero-content h1 {
+        font-size: 38px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}

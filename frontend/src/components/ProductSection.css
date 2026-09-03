@@ -1,0 +1,581 @@
+/* =====================================================
+   PRODUCT SECTION
+===================================================== */
+
+.product-section {
+
+    width: 100%;
+
+    padding: 90px 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #faf8ff 100%
+        );
+
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.product-container {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.product-heading {
+
+    text-align: center;
+
+    padding: 0 20px;
+
+    margin-bottom: 50px;
+
+    animation:
+        productHeadingShow
+        .8s ease
+        forwards;
+
+}
+
+
+@keyframes productHeadingShow {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL TITLE
+===================================================== */
+
+.product-label {
+
+    display: inline-block;
+
+    color: #7c3aed;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =====================================================
+   MAIN TITLE
+===================================================== */
+
+.product-heading h2 {
+
+    margin: 8px 0 12px;
+
+    font-size: 42px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    color: #171717;
+
+}
+
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.product-heading p {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: #737373;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   PRODUCT SLIDER
+===================================================== */
+
+.product-slider {
+
+    width: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   PRODUCT TRACK
+===================================================== */
+
+.product-track {
+
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 25px;
+
+    width: max-content;
+
+    padding: 20px 0 35px;
+
+    animation:
+        productScroll
+        35s
+        linear
+        infinite;
+
+}
+
+
+/* =====================================================
+   CONTINUOUS SCROLL
+===================================================== */
+
+@keyframes productScroll {
+
+    from {
+
+        transform:
+            translateX(0);
+
+    }
+
+    to {
+
+        transform:
+            translateX(
+                calc(
+                    -50% - 12.5px
+                )
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   PRODUCT SLIDE
+===================================================== */
+
+.product-slide {
+
+    flex: 0 0 280px;
+
+    width: 280px;
+
+    transition:
+        transform .35s ease;
+
+}
+
+
+/* =====================================================
+   CARD HOVER
+===================================================== */
+
+.product-slide:hover {
+
+    transform:
+        translateY(-10px);
+
+}
+
+
+/* =====================================================
+   PAUSE ON HOVER
+===================================================== */
+
+.product-slider:hover
+.product-track {
+
+    animation-play-state:
+        paused;
+
+}
+
+
+/* =====================================================
+   LEFT FADE
+===================================================== */
+
+.slider-fade-left {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 110px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff 0%,
+            rgba(255,255,255,.85) 35%,
+            transparent 100%
+        );
+
+}
+
+
+/* =====================================================
+   RIGHT FADE
+===================================================== */
+
+.slider-fade-right {
+
+    position: absolute;
+
+    z-index: 10;
+
+    right: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 110px;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            270deg,
+            #ffffff 0%,
+            rgba(255,255,255,.85) 35%,
+            transparent 100%
+        );
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.product-loading {
+
+    min-height: 400px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #7c3aed;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+/* =====================================================
+   LOADING SPINNER
+===================================================== */
+
+.loading-spinner {
+
+    width: 24px;
+
+    height: 24px;
+
+    border-radius: 50%;
+
+    border: 3px solid #ede9fe;
+
+    border-top-color: #7c3aed;
+
+    animation:
+        loadingSpin
+        .8s
+        linear
+        infinite;
+
+}
+
+
+@keyframes loadingSpin {
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.product-error {
+
+    min-height: 350px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #dc2626;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.product-empty {
+
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #737373;
+
+    font-size: 18px;
+
+}
+
+
+.product-empty i {
+
+    font-size: 45px;
+
+    color: #8b5cf6;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .product-section {
+
+        padding: 70px 0;
+
+    }
+
+
+    .product-heading h2 {
+
+        font-size: 36px;
+
+    }
+
+
+    .product-slide {
+
+        flex-basis: 250px;
+
+        width: 250px;
+
+    }
+
+
+    .product-track {
+
+        gap: 20px;
+
+        animation-duration:
+            30s;
+
+    }
+
+
+    .slider-fade-left,
+    .slider-fade-right {
+
+        width: 70px;
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .product-section {
+
+        padding: 55px 0;
+
+    }
+
+
+    .product-heading {
+
+        padding: 0 18px;
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .product-label {
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .product-heading h2 {
+
+        font-size: 29px;
+
+    }
+
+
+    .product-heading p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .product-track {
+
+        gap: 16px;
+
+        padding-top: 15px;
+
+        animation-duration:
+            25s;
+
+    }
+
+
+    .product-slide {
+
+        flex-basis: 230px;
+
+        width: 230px;
+
+    }
+
+
+    .slider-fade-left,
+    .slider-fade-right {
+
+        width: 45px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .product-heading h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    .product-slide {
+
+        flex-basis: 210px;
+
+        width: 210px;
+
+    }
+
+}

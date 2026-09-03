@@ -1,0 +1,432 @@
+/* =====================================================
+   MY ACCOUNT — "passbook" theme
+   Palette:
+     --ink        #12141A  (near-black navy, primary text)
+     --ink-soft   #4B5160  (secondary text)
+     --paper      #F4F5F7  (cool grey-blue page background)
+     --paper-card #FFFFFF  (card surface)
+     --line       #DDE1E6  (hairline dividers)
+     --teal       #1F6F63  (primary accent — links, icons, focus)
+     --brass      #B8912C  (stamp accent — active status, avatar)
+   Type:
+     Display: "Fraunces" (serif, used sparingly for H1/H2)
+     Body:    "Inter" (sans, UI text)
+     Data:    "IBM Plex Mono" (ledger-style values: username, email, etc.)
+   ===================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap");
+
+.account-page {
+  --ink: #12141a;
+  --ink-soft: #4b5160;
+  --paper: #f4f5f7;
+  --paper-card: #ffffff;
+  --line: #dde1e6;
+  --teal: #1f6f63;
+  --teal-dim: #e6efed;
+  --brass: #b8912c;
+  --brass-dim: #f6efdd;
+
+  min-height: 100vh;
+  padding: 56px 20px 80px;
+  background: var(--paper);
+  background-image: linear-gradient(var(--line) 1px, transparent 1px);
+  background-size: 100% 44px;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  box-sizing: border-box;
+}
+
+.account-page *,
+.account-page *::before,
+.account-page *::after {
+  box-sizing: border-box;
+}
+
+.account-container {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =====================================================
+   LOADING
+   ===================================================== */
+
+.account-loading {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--ink-soft);
+}
+
+.account-spinner {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 3px solid var(--line);
+  border-top-color: var(--teal);
+  animation: account-spin 0.8s linear infinite;
+}
+
+@keyframes account-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================================
+   ERROR
+   ===================================================== */
+
+.account-error {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.account-error i {
+  font-size: 34px;
+  color: #a33d3d;
+  margin-bottom: 4px;
+}
+
+.account-error h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--ink);
+  margin: 0;
+}
+
+.account-error button {
+  margin-top: 12px;
+  padding: 10px 22px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 6px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.account-error button:hover {
+  opacity: 0.85;
+}
+
+.account-error button:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.account-header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.account-avatar {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.account-title span {
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.account-title h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 0 0 4px;
+  color: var(--ink);
+}
+
+.account-title p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.account-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.card-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal-dim);
+  color: var(--teal);
+  font-size: 17px;
+}
+
+.card-heading h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 17px;
+  margin: 0 0 2px;
+  color: var(--ink);
+}
+
+.card-heading p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.account-divider {
+  height: 1px;
+  margin: 20px 0;
+  border-top: 1px dashed var(--line);
+  background: none;
+}
+
+/* =====================================================
+   PERSONAL INFORMATION GRID
+   ===================================================== */
+
+.account-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 24px;
+}
+
+.account-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.account-field span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.account-field strong {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  word-break: break-word;
+}
+
+/* =====================================================
+   ACCOUNT STATUS
+   ===================================================== */
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.status-row > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.status-row > div:first-child span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.status-row > div:first-child strong {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.active-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--brass-dim);
+  color: var(--brass);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(184, 145, 44, 0.35);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brass);
+  box-shadow: 0 0 0 3px rgba(184, 145, 44, 0.2);
+}
+
+/* =====================================================
+   QUICK ACTIONS
+   ===================================================== */
+
+.account-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.account-action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.account-action:hover {
+  border-color: var(--teal);
+  transform: translateX(2px);
+}
+
+.account-action:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.account-action > i:first-child {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal-dim);
+  color: var(--teal);
+  font-size: 15px;
+}
+
+.account-action > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.account-action strong {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.account-action span {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.account-action > i:last-child {
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 560px) {
+  .account-page {
+    padding: 36px 14px 60px;
+  }
+
+  .account-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .account-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .account-spinner {
+    animation: none;
+    border-top-color: var(--line);
+  }
+
+  .account-action {
+    transition: none;
+  }
+}

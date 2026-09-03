@@ -1,0 +1,166 @@
+.about-page {
+    min-height: 80vh;
+    padding: 80px 0;
+    background: linear-gradient(
+        180deg,
+        #faf8ff,
+        #ffffff
+    );
+}
+
+.about-hero {
+    max-width: 750px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.about-label {
+    color: #8b5cf6;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.about-hero h1 {
+    margin: 12px 0 18px;
+    color: #222;
+    font-size: 46px;
+    line-height: 1.2;
+    font-weight: 750;
+}
+
+.about-hero h1 span {
+    color: #8b5cf6;
+}
+
+.about-hero p {
+    max-width: 620px;
+    margin: auto;
+    color: #777;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* CARDS */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.about-card {
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #eee8ff;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(40, 20, 80, 0.05);
+    transition: 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 35px rgba(139, 92, 246, 0.12);
+}
+
+.about-icon {
+    width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    background: #f1ebff;
+    color: #8b5cf6;
+    border-radius: 18px;
+    font-size: 28px;
+}
+
+.about-card h2 {
+    margin-bottom: 10px;
+    color: #222;
+    font-size: 19px;
+}
+
+.about-card p {
+    margin: 0;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* STATS */
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 45px;
+    padding: 30px;
+    background: #ffffff;
+    border: 1px solid #eee8ff;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(40, 20, 80, 0.05);
+}
+
+.about-stats div {
+    text-align: center;
+    border-right: 1px solid #eeeeee;
+}
+
+.about-stats div:last-child {
+    border-right: none;
+}
+
+.about-stats strong {
+    display: block;
+    color: #8b5cf6;
+    font-size: 25px;
+}
+
+.about-stats span {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .about-page {
+        padding: 60px 0;
+    }
+
+    .about-hero h1 {
+        font-size: 35px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .about-stats div {
+        border-right: none;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .about-hero h1 {
+        font-size: 30px;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+}
